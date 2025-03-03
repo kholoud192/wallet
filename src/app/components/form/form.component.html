@@ -1,0 +1,79 @@
+<div class="bg-gray-200 justify-items-center">
+<h1 class="p-5 text-2xl py-9 font-semibold">Investment Application Form</h1>
+<form class=" w-8/12 rounded-b-md" (submit)="submitForm($event)" enctype="multipart/form-data">
+    <h2 class="bg-blue-600 rounded-t-md p-4 text-white">Personal Information</h2>
+    <div class=" bg-white grid grid-cols-2 shadow-md  w-full">
+        <div class="input p-8">
+            <label class="block pb-2">First Name*</label>
+            <input type="text" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full"  [(ngModel)]="user.first_name" name="first_name">
+        </div>
+        <div class="input  p-8">
+            <label class="block pb-2">Last Name(s)*</label>
+            <input type="text" class="border border-gray-200 shadow-sm p-1 rounded-md w-full" [(ngModel)]="user.last_name" name="last_name">
+        </div>
+        <div class="input  p-8">
+            <label class="block pb-2">Middle Name</label>
+            <input type="text" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full"  [(ngModel)]="user.middle_name" name="middle_name">
+        </div>
+        <div class="input  p-8">
+            <label class="block pb-2">Other Names Used</label>
+            <input type="text" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full" [(ngModel)]="user.other_names" name="other_names">
+        </div>
+        <div class="input p-8">
+            <label class="block pb-2">Date Of Birth*</label>
+            <input type="date" class=" border border-gray-200 shadow-sm p-2 rounded-md w-full"  [(ngModel)]="user.date_of_birth" name="date_of_birth" required>
+        </div>
+        <div class="input  p-8">
+            <label class="block pb-2">Place Of Birth*</label>
+            <input type="text" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full" [(ngModel)]="user.place_of_birth" name="place_of_birth" required>
+        </div>
+        <div class="input col-span-2  p-8">
+            <label class="block pb-2">Current Address*</label>
+            <textarea  class=" border border-gray-200 shadow-sm py-3 rounded-md w-1/2" [(ngModel)]="user.current_address" name="current_address" required></textarea>
+        </div>
+        <div class="input p-8">
+            <label class="block pb-2">Phone Number*</label>
+            <input type="text" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full"  [(ngModel)]="user.phone_number" name="phone_number" required>
+        </div>
+        <div class="input  p-8">
+            <label class="block pb-2">Email*</label>
+            <input type="email" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full" [(ngModel)]="user.email" name="email" required>
+        </div>
+    </div>
+    <div class="text-gray-200"> space</div>
+    <h2 class="bg-green-600 rounded-t-md p-4 text-white">Investment Information</h2>
+    <div class=" bg-white shadow-md  w-full">
+        <div class="input p-8">
+            <label class="block pb-2">Do you have an investment license?*</label>
+            <input type="radio" [(ngModel)]="user.has_investment_license" name="has_investment_license" [value]="true"><span class="px-2">Yes</span>
+            <input type="radio" [(ngModel)]="user.has_investment_license" name="has_investment_license" [value]="false"><span class="px-2">No</span>
+        </div>
+        <div class="input  p-8">
+            <label class="block pb-2">Investment License Number*</label>
+            <input type="text" class="border border-gray-200 shadow-sm p-1 rounded-md w-full" [(ngModel)]="user.investment_license_number" name="investment_license_number" required>
+        </div>
+        <div class="input  p-8">
+            <label class="block pb-2">USDT Address*</label>
+            <input type="text" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full" [(ngModel)]="user.usdt_address" name="usdt_address" required>
+        </div>
+        <div class="input  p-8">
+            <label class="block pb-2">Secret Phrase*</label>
+            <input type="text" placeholder="Keywords" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full" [(ngModel)]="user.secret_phrase" name="secret_phrase" required>
+        </div>
+    
+        <div class="input  p-8">
+            <label>Wallet Type*</label>
+      <input type="text" class=" border border-gray-200 shadow-sm p-1 rounded-md w-full" [(ngModel)]="user.wallet_type" name="wallet_type" required>
+        </div>
+        <div class="input  p-8">
+            <label>Upload Image</label>
+            <input type="file" (change)="onFileSelected($event)" name="image" required ngModelOptions="{standalone: true}">
+
+        </div>
+        <div class="text-center">
+            <button type="submit" class="border border-green-700 bg-green-700 text-white p-2 rounded-md ">Submit</button>
+        </div>
+
+    </div>
+</form>
+</div>
