@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* تغيير لون الخلفية والنصوص حسب نوع التوست */
 .toast-success {
     background-color: #28a745 !important; 
     position: fixed;
